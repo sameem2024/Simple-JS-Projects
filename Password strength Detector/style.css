@@ -1,0 +1,101 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(45, 43, 43);
+}
+.container{
+    width:80%;
+    margin:20% auto;
+    height:70vh;
+    background: #201f21;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+p{
+    color:#fff;
+   margin-bottom: 30px;
+}
+.message{
+  margin-top: 60px;
+
+}
+.input-box{
+    width:400px;
+    height:auto;
+    max-width: 90%;
+     position: relative;
+}
+.input-box input{
+    width:100%;
+    height:60px;
+    padding:0 20px;
+    border:1px solid #ccc;
+    outline:none;
+    color:#fff;
+    background:transparent;
+   
+}
+#strength-class{
+    width:100%;
+    height:100px;
+    border:1px solid #26d730;
+    padding:1rem 0.9rem;
+    position:absolute;
+    bottom:-150px;
+    display:none;
+}
+#button-position{
+    position:relative;
+}
+button img{
+    width:40px;
+}
+button{
+background: transparent;
+border:0;
+outline:none;
+border-radius: 50%;
+cursor:pointer;
+position:absolute;
+top:-30px;
+right:10px;
+transform:translateY(-50%);
+}
+
+::placeholder{
+    font-size:20px;
+}
+#message{
+    color:#fff;
+    font-size:15px;
+    height:auto;
+    margin-top:20px;
+   display:none;
+}
+
+
+.error{
+    animation: shake 0.1s linear 10;
+    }
+ @keyframes shake{
+        0%{
+            transform:translateX(0);
+        }
+        25%{
+            transform:translateX(-2px);
+        }
+        50%{
+            transform:translateX(0);
+        }
+        75%{
+            transform:translateX(2px);
+        }
+        100%{
+            transform:translateX(0);
+        }
+    }

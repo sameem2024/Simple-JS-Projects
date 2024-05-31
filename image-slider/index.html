@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <img src="back.png" id="backbtn">
+    <div class="gallery">
+        <div>
+        <img src="image-1.png">
+        <img src="image-2.png">
+        <img src="image-3.png">
+       </div>
+        <div>
+            <img src="image-4.png">
+            <img src="image-5.png">
+            <img src="image-6.png">
+        </div>   
+        </div>
+        <img src="next.png" id="nextbtn">
+    </div>
+
+    <script>
+        const scrollContainer = document.querySelector('.gallery');
+        const backbtn = document.getElementById('backbtn');
+        const nextbtn = document.getElementById('nextbtn');
+
+        backbtn.addEventListener('click',()=>{
+
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -= 900;
+
+        });
+
+        nextbtn.addEventListener('click',()=>{
+
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+
+        });
+    </script>
+</body>
+</html>

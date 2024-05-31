@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample prctices</title>
+</head>
+
+<body>
+    
+   <!--  <button>button1</button>
+    <button>button2</button>
+    <button>button3</button> -->
+
+
+    
+    
+<script>
+    // IIfe example//
+    /* var buttons = document.querySelectorAll('button');
+    for(var i = 0;i < buttons.length; i++){
+       
+        buttons[i].addEventListener('click',(function (x) {
+            console.log("iife runs")
+            console.log(i);
+            return function(){
+            console.log("in return function");
+             console.log('click',x);
+             console.log(i);
+            } 
+        })(i) );
+    
+    }  */
+ 
+
+ 
+    /* const privateCounter = (function(inner) {
+       
+        console.log(`Initial count is : ${i}`);
+        var count = 0;
+        return function(){
+            count++;
+            console.log(count);
+            console.log(inner);
+        }
+        
+    }) (i=5);
+    
+    privateCounter();
+    privateCounter();
+    console.log(typeof privateCounter); */
+
+
+    /* function outer(){
+    
+    var count = 5;
+    console.log("iife");
+    
+    function increment(){
+        count++;
+        console.log(`count is: ${count}`);
+    }
+
+    function decrecount(){
+        count--;
+        console.log(`count is: ${count}`);
+    }
+    return  {
+        increment:increment,
+        decrecount:decrecount
+    }
+    
+}
+
+start();
+console.log(start);
+const obj = outer();
+console.log(obj);
+console.log(typeof obj);
+obj.increment();
+ */
+
+
+
+ const score = (() =>{
+
+    console.log('iife');
+    var count;
+    return{
+        current:()=>{
+            return count = 0;
+        },
+
+        incre: ()=>{
+            count++;
+            console.log(count);
+        }
+        
+    }
+
+ })();
+console.log(typeof score.current);
+console.log(score.current());
+
+
+
+
+
+
+
+    
+    
+</script>
+</body>
+</html>

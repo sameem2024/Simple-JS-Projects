@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-box">
+            <p>Enter password within 15 letters</p>
+            <input type ="password" id = "password" placeholder = "password">
+            <div id="button-position">
+            <button type="submit">
+               <img src="arrow.png">
+            </button>
+        </div>
+            <div id="message"></div>
+            <div id="strength-class"></div>
+        </div>
+        
+    </div>
+   <script>
+
+    var pass=document.getElementById('password');
+    var message=document.getElementById('message');
+    const strengths = document.getElementById('strength-class');
+    const number =  document.createElement('p');
+    const special = document.createElement('p');
+    
+    
+    let specialChars =
+        "!@#$%^&*()-_=+[{]};:'\",<.>/?\\|";
+    let special_count = 0;
+    let number_count = 0;
+
+    pass.addEventListener('input',()=>{
+        
+
+        if(pass.value.length > 0){
+            message.style.display = "block";
+
+        } else{
+            message.style.display = "none";
+        }
+        strengths.style.display = "none";
+        if(pass.value.length < 4){
+            message.innerHTML = "Password is Weak";
+            pass.style.borderColor = "#ff5925";
+            message.style.color = "#ff5925";
+        } 
+        else if(pass.value.length >= 4 && pass.value.length < 8){
+            message.innerHTML = "Password is Medium";
+            pass.style.borderColor = "yellow";
+            message.style.color = "yellow";
+        } 
+        else if(pass.value.length > 15)
+        {
+            message.innerHTML = "Password is more than 15 letters";
+            pass.style.borderColor = "red";
+            message.style.color = "red";
+            document.querySelector('input').classList.add("error");
+        }
+        else if((pass.value.length >= 8) && (pass.value.length <= 15)){
+
+            strengths.style.display = "none";
+            message.innerHTML = "Password is strong.But can include numbers or special characters";
+            pass.style.borderColor = "#26d730";
+            message.style.color = "#26d730";
+
+            for(let i=0;i<pass.value.length;i++){
+                if((pass.value[i] === '!')|| (pass.value[i] === '@')|| (pass.value[i] === '#')||
+                (pass.value[i] === '%')|| (pass.value[i] === '&')|| (pass.value[i] === '*'))
+                {
+                    special_count ++;
+                }
+                if((pass.value[i] === '1')|| (pass.value[i] === '2')|| (pass.value[i] === '3')||
+                (pass.value[i] === '4')|| (pass.value[i] === '5')|| (pass.value[i] === '6') ||
+                (pass.value[i] === '7')|| (pass.value[i] === '8')|| (pass.value[i] === '9')||(pass.value[i] === '0'))
+                {
+                    number_count ++;
+                }
+                
+                
+            }
+               
+            if((special_count > 0 ) && (number_count > 0)){
+                
+
+                number.textContent = "password contains number";
+                special.textContent = "password contains special character";
+                strengths.appendChild(number);
+                strengths.appendChild(special);
+                document.querySelector('input').classList.remove("error");
+
+                message.style.display = "none";
+                strengths.style.display = "block";
+                
+            }
+            special_count = 0;
+            number_count = 0;
+        } 
+        
+       
+    });
+
+    document.querySelector('button').addEventListener('click',()=>{
+        pass.value = '';
+    })
+
+   </script> 
+       
+</body>
+    
+    
+</html>

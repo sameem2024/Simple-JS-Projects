@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissor game</title>
+    <style>
+        body{
+            background-color: rgb(25,25,25);
+            font-family: arial;
+            color:white;
+        }
+        .title{
+            font-size: 2rem;
+            
+            font-weight: bold;
+        }
+        .icon-button{
+            background-color: black;
+            padding: 2rem;
+            margin-right: 1rem;
+            border-radius:50%;
+            border:2px solid white;
+            margin-bottom: 3rem;
+        }
+        .icon{
+            height:3.5rem;
+        }
+        .gamermove,.result{
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .moves{
+            margin-bottom: 4rem;
+        }
+        .reset-button,.autoplay-button{
+            margin-top: 1.2rem;
+            margin-right:1.3rem;
+            padding: 1rem 1.2rem;
+            font-size: 0.9rem;
+            background-color: black;
+            color: #fff;
+            border:none;
+            border-radius: 1rem;
+            cursor:pointer;
+        }
+        .yes-no{
+            padding:1rem;
+            background-color: black;
+            color: #fff;
+            border:none;
+            border-radius: 1rem;
+            cursor:pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <p class="title">
+        Rock Paper Scissors
+    </p>
+    
+    <button class="icon-button js-input1">
+        <img src="pictures/rock.png" class="icon">
+    </button>
+    <button class="icon-button js-input2">
+        <img src="pictures/paper.png" class="icon">
+    </button>
+    <button class="icon-button js-input3">
+        <img src="pictures/scissor.png" class="icon">
+    </button>
+
+    <p class="js-result result"></p>
+    <p class="js-moves moves"></p>
+    <p class="js-score"></p>
+    
+   <button class="reset-button js-reset-button">
+       Reset Score
+    </button>
+
+    <button class="autoplay-button js-autoplay-button">
+    Auto Play
+    </button>
+
+    <p class="js-reset-confirmation"></p>
+
+<script src="rock-paper-scissor.js"></script>
+</body>
+</html>
